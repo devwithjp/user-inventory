@@ -1,4 +1,3 @@
-import { users } from '../../common/data';
 import Button from '../Button/Button';
 import './Form.scss';
 import { useState } from 'react';
@@ -89,7 +88,7 @@ export default function Form(props) {
                                         id="male"
                                         name="gender"
                                         value="Male"
-                                        checked={tempUserData?.gender=='male'}
+                                        checked={tempUserData?.gender==='Male'}
                                         onChange={onChangeHandler}
                                         required
                                     />
@@ -100,7 +99,7 @@ export default function Form(props) {
                                         id="female"
                                         name="gender"
                                         value="Female"
-                                        checked={tempUserData?.gender=='female'}
+                                        checked={tempUserData?.gender==='Female'}
                                         onChange={onChangeHandler}
                                         required
                                     />

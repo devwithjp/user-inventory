@@ -9,7 +9,6 @@ import {users} from './common/data';
 
 
 function App() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [usersData, setUsersData] = useState(users);
   const [formType, setFormType] = useState('ADD USER');
   const [id, setId] = useState(null);
@@ -25,7 +24,7 @@ function App() {
     setUsersData(filteredUsers);
   }
 
-  
+
 
   return (
     <div className="App">
