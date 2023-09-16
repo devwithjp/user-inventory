@@ -1,10 +1,10 @@
 import './CardList.scss';
-import { users } from '../../common/data';
 import Card from '../Card/Card';
 
 export default function CardList(props) {
+    const {users, onDelete, setFormType, setId} = props;
     const cardList = users.map((user, index) => (
-        <Card {...user}/>
+        <Card {...user} onDelete={onDelete} setFormType={setFormType} setId={setId}/>
     ));
     return(
         <div className='cards-container'>

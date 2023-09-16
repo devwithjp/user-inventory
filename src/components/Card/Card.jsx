@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../Button/Button';
 
 export default function Card(props) {
-    const {name, age, dob, gender, food, hobbies} = props;
+    const {id, name, age, dob, gender, food, hobbies, onDelete, setFormType, setId} = props;
 
     const getAgeColor = (age) => {
         if(age < 25){
@@ -28,6 +28,11 @@ export default function Card(props) {
         </p>
     )
 
+    const onViewEditClick = (formType, id) => {
+        setFormType(formType);
+        setId(id);
+    }
+
     const btnStyle = {width:'100px', height:'30px', padding:'2px 4px', borderRadius:'5px' };
 
     return (
@@ -44,9 +49,9 @@ export default function Card(props) {
                 {cardFields('HOBBIES:', hobbies)}
             </div>
             <div className='btns-container'>
-                <Button text='DELETE' btnType='red' style={btnStyle}/>
-                <Button text='VIEW' btnType='blue' style={btnStyle}/>
-                <Button text='EDIT' btnType='blue' style={btnStyle}/>
+                <Button text='DELETE' btnType='red' style={btnStyle} onClick={()=>onDelete(id)}/>
+                <Button text='VIEW' btnType='blue' style={btnStyle} onClick={()=>onViewEditClick('VIEW USER',id)}/>
+                <Button text='EDIT' btnType='blue' style={btnStyle} onClick={()=>onViewEditClick('EDIT USER',id)}/>
             </div>
         </div>
     );

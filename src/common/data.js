@@ -2,7 +2,7 @@ export const userData = (id,age) =>{return {
     id: id,
     name: 'John Doe',
     age: age,
-    dob: '01/01/1990',
+    dob: '1990-12-12',
     gender: 'Male',
     food: 'Pizza',
     hobbies: 'Likes to play football',

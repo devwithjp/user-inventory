@@ -11,24 +11,31 @@ import {users} from './common/data';
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [usersData, setUsersData] = useState(users);
+  const [formType, setFormType] = useState('ADD USER');
+  const [id, setId] = useState(null);
 
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
+
 
   const closePopup = () => {
-    setIsPopupOpen(false);
+    setFormType('');
   };
+
+  const onDelete = (id) => {
+    const filteredUsers = usersData.filter((user) => user.id !== id);
+    setUsersData(filteredUsers);
+  }
+
+  
 
   return (
     <div className="App">
-      <Popup isOpen={isPopupOpen} onClose={closePopup}>
-        <Form title={'ADD USER'} onClose={closePopup}/>
+      <Popup isOpen={formType !== ''} onClose={closePopup}>
+        <Form title={formType} onClose={closePopup} setUsersData={setUsersData} usersData={usersData} id={id}/>
       </Popup>
       <header>
           <Header />
-          <PageHeader onClickView={()=>openPopup()}/>
-          <CardList />
+          <PageHeader setFormType={ setFormType}/>
+          <CardList users={usersData} onDelete={onDelete} setFormType={setFormType} setId={setId}/>
           
       </header>
       
