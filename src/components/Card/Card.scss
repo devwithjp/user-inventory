@@ -1,0 +1,43 @@
+@import "../../common/_typography.scss";
+@import "../../common/_layout.scss";
+@import "../../common/_colors.scss";
+
+.card{
+    border-radius: 10px;
+    border: 1px solid #000;
+    width: 460px;
+    height: 340px;
+    @include flex-layout(space-between, stretch, column);
+    .card-header{
+        @include flex-layout(space-around, center);
+        border-bottom: 1px solid #000;
+        p{
+            @include typography($font-roboto, $medium, $bold, $black);
+        }
+        .circle{
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .card-body{
+        text-align: start;
+        margin: 0 20px;
+        .fields-name{
+            @include typography($font-roboto, $small, $light, $black);
+        }
+        .fields-value{
+            margin-left: 20px;
+            @include typography($font-roboto, $small, $bold, $black);
+        }
+
+    }
+    .btns-container{
+        @include flex-layout(space-between, center);
+        border-top: 1px solid #000;
+        padding: 15px 20px;
+        @include typography($font-roboto, $smaller, $light, $white);
+
+    }
+    
+}

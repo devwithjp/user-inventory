@@ -1,0 +1,20 @@
+@import "../../common/_colors.scss";
+@import "../../common/_typography.scss";
+@import "../../common/layout.scss";
+
+.header{
+    height: 122px;
+    background-color: $grey-header;
+    padding:0 8em;
+    
+    @include flex-layout(space-between, center);
+
+
+    .title{
+        @include typography($font-roboto, $larger, $bold, $white);
+    }
+    img{
+        width: 54px;
+        height: 54px;
+    }
+}

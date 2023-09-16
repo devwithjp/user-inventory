@@ -1,0 +1,23 @@
+
+
+$largest: 28px;
+$larger: 24px;
+$large: 22px;
+$medium: 20px;
+$small: 18px;
+$smaller: 16px;
+
+$light:400;
+$bold: 700;
+// $bolder: ;
+
+
+$font-roboto: 'Roboto', sans-serif;
+
+
+@mixin typography( $fam, $fsize, $fweight, $color) {
+  font-family: $fam;
+  font-size: $fsize;
+  font-weight: $fweight;
+  color: $color;
+}
